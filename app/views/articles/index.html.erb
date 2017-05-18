@@ -1,0 +1,15 @@
+
+<%= link_to 'NEW Article' ,new_article_path%>
+------------
+<% @articles.each do |a| %>
+-------------------<br>
+id:<%= a.id %><br>
+title:<%= a.title %><br>
+text:<%= a.text %><br>
+<%= link_to 'show', article_path(a) %>
+------------------- <br>
+<%= link_to 'Edit', edit_article_path(a) %>
+<%= link_to 'Destroy', article_path(a),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %>
+<% end %>
